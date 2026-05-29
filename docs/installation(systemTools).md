@@ -1,13 +1,5 @@
 # System Tools 安装指南
 
-## 零、配置文件, chezmoi
-
-```
-snap install chezmoi --classic
-```
-
-
-
 ## 一、协同工具
 
 | 工具 | 说明 | macOS | Linux |
@@ -45,8 +37,10 @@ snap install chezmoi --classic
 | 环境 | 说明 | 安装命令 |
 |------|------|---------|
 | Rust | RUSTUP 环境 | 如下 |
+| npm | JS/TS 环境 | `sudo apt install npm` 或者 `brew apt install npm` |
+| bun | JS/TS 环境 | `npm install -g bun` |
 
-> Rust 安装命令
+> Rust 安装命令 （前两行为国内镜像）
 >
 > ```shell
 > export RUSTUP_DIST_SERVER=https://rsproxy.cn

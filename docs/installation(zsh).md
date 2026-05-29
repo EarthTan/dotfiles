@@ -110,3 +110,4 @@ sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
 
 
 
+​	
