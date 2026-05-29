@@ -76,9 +76,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting \
 # zsh-completions（扩展 Tab 补全）
 git clone https://github.com/zsh-users/zsh-completions \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
+
+# zoxide
+brew install zoxide
+sudo apt install zoxide
 ```
 
-其余插件（`z`、`sudo`、`extract`、`colored-man-pages`、`git`、`docker`、`node`）均为 oh-my-zsh 内置，无需额外安装。
+其余插件（`extract`、`colored-man-pages`、`git`、`docker`、`node`）均为 oh-my-zsh 内置，无需额外安装。
 
 ---
 

@@ -21,7 +21,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ── PATH 补充（如有需要取消注释）─────────────────────────────────────────────
-# export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # ── Powerlevel10k 配置文件 ────────────────────────────────────────────────────
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zoxide 
+eval "$(zoxide init zsh)"
