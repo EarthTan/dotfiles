@@ -25,7 +25,8 @@ echo "source ~/.config/zsh/init.zsh" >> ~/.zshrc
 
 # 5. （optional） 获取解密密钥
 sudo snap install bw
-bw get age_key.txt
+bw login
+bw get notes age_key.txt
 chezmoi apply
 ```
 
