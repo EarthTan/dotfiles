@@ -1,5 +1,13 @@
 # System Tools 安装指南
 
+## 零、配置文件, chezmoi
+
+```
+snap install chezmoi --classic
+```
+
+
+
 ## 一、协同工具
 
 | 工具 | 说明 | macOS | Linux |

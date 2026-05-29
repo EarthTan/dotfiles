@@ -16,6 +16,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # 3. 设置为默认 shell（若安装时未自动设置）
 chsh -s $(which zsh)
 # 重新登录后生效
+
+# 4. 同步 chezmoi 配置
+sudo snap install chezmoi --classic
+chezmoi init https://github.com/EarthTan/dotfiles.git
+echo "source ~/.config/zsh/init.zsh" >> ~/.zshrc
+
+
+# 5. （optional） 获取解密密钥
+sudo snap install bw
+bw get age_key.txt
+chezmoi apply
 ```
 
 ---
@@ -28,19 +39,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-在 `~/.zshrc` 中设置：
-
-```bash
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
 重启终端后会自动进入交互式配置向导。若需重新配置：
 
 ```bash
 p10k configure
 ```
 
-### 字体（避免图标乱码）
+### 终端字体（避免图标乱码）
 
 ```bash
 # 下载 MesloLGS NF（p10k 官方推荐）
@@ -76,33 +81,6 @@ git clone https://github.com/zsh-users/zsh-completions \
 
 ---
 
-## 四、~/.zshrc 关键配置
-
-```bash
-# 主题
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# 插件列表
-plugins=(
-  git
-  # z
-  zoxide  # z 和 zoxide 两者取一， zoxide 需要单独安装
-  sudo
-  extract
-  colored-man-pages
-  docker
-  node
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-completions
-)
-
-# p10k 配置文件（自动生成，勿删）
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-```
-
----
-
 ## 五、PATH 问题修复, 引用配置文件
 
 ```bash
@@ -112,18 +90,3 @@ source ~/.config/zsh/init.zsh
 source ~/.zshrc
 ```
 
----
-
-## 六、常用命令速查
-
-| 操作             | 命令                     |
-| ---------------- | ------------------------ |
-| 重载配置         | `source ~/.zshrc`        |
-| 重新配置 p10k    | `p10k configure`         |
-| 跳转到常用目录   | `z <目录名关键词>`       |
-| 万能解压         | `x <文件名>`             |
-| 上条命令加 sudo  | 按两次 `ESC`             |
-| 搜索历史命令     | `Ctrl + R`（需安装 fzf） |
-| 采纳灰色补全提示 | `→` 方向键               |
-
----

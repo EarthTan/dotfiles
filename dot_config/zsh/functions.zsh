@@ -1,8 +1,8 @@
-# python 虚拟环境函数
 sv() {
-  if [ -f ".venv/bin/activate" ]; then
-    source .venv/bin/activate
+  local target="${1:-.}"  # 默认当前目录
+  if [ -f "${target}/.venv/bin/activate" ]; then
+    source "${target}/.venv/bin/activate"
   else
-    echo "No .venv found in current directory"
+    echo "No .venv found in ${target}"
   fi
 }
