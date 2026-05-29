@@ -15,6 +15,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  git = { -- 加这里
+    timeout = 300,
+    url_format = "https://ghfast.top/%s", -- 国内镜像
+  },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
