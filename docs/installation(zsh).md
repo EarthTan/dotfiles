@@ -1,20 +1,21 @@
-# Zsh 环境配置文档
-
-> Ubuntu + Oh My Zsh + Powerlevel10k，快速复现个人环境用。
-
----
+# Zsh 环境配置文档 (linux)
 
 ## 一、基础安装
 
 ```bash
-# 1. 安装 zsh
+# 1. 安装 zsh 和 neovim
 sudo apt update && sudo apt install zsh -y
+sudo apt update && sudo apt install neovim
+# （optional) 使用 cargo 工具链 安装
+cargo install bob-nvim
+bob install stable
+bob use stable
 
 # 2. 安装 Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # 3. 设置为默认 shell（若安装时未自动设置）
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 # 重新登录后生效
 
 # 4. 同步 chezmoi 配置
@@ -78,7 +79,6 @@ git clone https://github.com/zsh-users/zsh-completions \
   ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 # zoxide
-brew install zoxide
 sudo apt install zoxide
 ```
 
@@ -94,4 +94,19 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.config/zsh/init.zsh
 source ~/.zshrc
 ```
+
+
+
+# 其他
+
+neovim 官方安装方法
+
+```shell
+# sudo apt install curl
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+chmod u+x nvim-linux-x86_64.appimage
+sudo mv nvim-linux-x86_64.appimage /usr/local/bin/nvim
+```
+
+
 
