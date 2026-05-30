@@ -12,10 +12,3 @@ export HOMEBREW_AUTO_UPDATE_SECS=3153600
 export HOMEBREW_AUTO_UPDATE_SECS=3153600
 
 
-{{ if eq .chezmoi.hostname "MacBook-Air-2025" -}}
-# proxy 网络代理
-# Sakuracat
-export https_proxy=http://127.0.0.1:7897
-export http_proxy=http://127.0.0.1:7897
-export all_proxy=socks5://127.0.0.1:7897
-{{ end -}}
